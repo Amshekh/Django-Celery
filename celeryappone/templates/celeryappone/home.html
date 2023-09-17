@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body style="background: linear-gradient(90deg, #60EFFF 10%, #0061FF 90%);">
+    <nav style="width: 100%;">
+        <ul>
+            <li style="display: inline-block; margin-left: 250px; font-size: 25px;"><a href="{% url 'home' %}" style="color: white;">Home</a></li>
+            <li style="display: inline-block; margin-left: 250px; font-size: 25px;"><a href="{% url 'product' %}" style="color: white;">Software-Products</a></li>
+            <li style="display: inline-block; margin-left: 250px; font-size: 25px;"><a href="{% url 'about' %}" style="color: white;">About Us</a></li>
+            <li style="display: inline-block; margin-left: 250px; font-size: 25px;"><a href="{% url 'contact' %}" style="color: white;">Contact Us</a></li>
+        </ul>
+    </nav>
+    <h1 style="text-align: center; padding-top: 35px;">Welcome to Amshekh Labs Pvt Ltd</h1>
+    <hr />
+    {% if res.id %}
+    <p>Task Id : {{ res.id }}</p>
+    <a href="{% url 'check_res' res.id %}">Check Task Result</a>
+    {% endif %}
+</body>
+</html>
